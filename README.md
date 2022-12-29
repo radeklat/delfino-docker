@@ -25,9 +25,9 @@
 
 # Commands
   
-| Command               | Description             |
-|-----------------------|-------------------------|
-| demo                  | An example demo command |
+| Command      | Description                                                                              |
+|--------------|------------------------------------------------------------------------------------------|
+| docker-build | Runs a `docker build` command for multiple platforms and pushes to dockerhub at the end. |
 
 # Installation
 
@@ -68,18 +68,20 @@ config_option_name = "default value"
 ```
 -->
 
-<!-- INDIVIDUAL COMMANDS MAY NEED CONFIGURATION -->
-<!--
 ## Commands configuration
 
-Several commands have their own configuration as well:
-
 ```toml
-[tool.delfino.plugins.delfino-docker.demo]
-# Config option description
-config_option_name = "default value"
+[tool.delfino.plugins.delfino-docker.docker-build]
+# User name for logging in into dockerhub
+dockerhub_username = ""
+
+# Platforms to build with dockerx
+build_for_platforms = [
+    "linux/arm/v7",
+    "linux/arm64",
+    "linux/amd64",
+]
 ```
--->
 
 # Usage
 
