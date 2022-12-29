@@ -12,11 +12,18 @@ Types of changes are:
 
 ## [Unreleased]
 
+## [1.1.0] - 2022-12-29
+
+### Features
+
+- Port `docker-build` command from [`delfino-core`](https://github.com/radeklat/delfino-core).
+
 ## [1.0.0] - 2022-12-29
 
 ### Features
 
 - Initial source code
 
-[Unreleased]: https://github.com/radeklat/settings-doc/compare/1.0.0...HEAD
-[1.0.0]: https://github.com/radeklat/settings-doc/compare/initial...1.0.0
+[Unreleased]: https://github.com/radeklat/delfino-docker/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/radeklat/delfino-docker/compare/1.0.0...1.1.0
+[1.0.0]: https://github.com/radeklat/delfino-docker/compare/initial...1.0.0
