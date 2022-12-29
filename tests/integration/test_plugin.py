@@ -4,7 +4,7 @@ import pytest
 from delfino.click_utils.command import CommandRegistry
 from delfino.models.pyproject_toml import PluginConfig
 
-from delfino_docker import demo
+from delfino_docker import docker_build
 
 
 @pytest.fixture(scope="session")
@@ -32,4 +32,4 @@ class TestPlugin:
     @staticmethod
     def should_be_visible_in_delfino(plugin_config):
         command_registry = CommandRegistry(plugin_config, CommandRegistry._discover_command_packages(plugin_config))
-        assert demo.name in {command.name for command in command_registry.visible_commands}
+        assert docker_build.name in {command.name for command in command_registry.visible_commands}

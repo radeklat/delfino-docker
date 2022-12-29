@@ -1,6 +1,6 @@
 [tool.poetry]
 name="delfino-docker"
-version="1.0.0"
+version="1.1.0"
 authors = ["Radek Lat <radek.lat@gmail.com>"]
 description="A delfino plugin with helper scripts for working with docker."
 license = "MIT License"
@@ -94,7 +94,8 @@ follow_imports = "silent"
 [[tool.mypy.overrides]]
 # Source code dependencies
 module = [
-    "delfino.*"
+    "delfino.*",
+    "delfino_core.*",
 ]
 ignore_missing_imports = true
 
