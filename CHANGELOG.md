@@ -12,6 +12,18 @@ Types of changes are:
 
 ## [Unreleased]
 
+## [2.0.0] - 2022-12-29
+
+### Breaking changes
+
+- Renamed command from `build-docker` to `docker-build`.
+- Renamed config option from `dockerhub` to `docker_build`.
+- Renamed config option key from `username` to `dockerhub_username`.
+
+### Fixes
+
+- Add missing dependency on `packaging`.
+
 ## [1.1.0] - 2022-12-29
 
 ### Features
@@ -24,6 +36,7 @@ Types of changes are:
 
 - Initial source code
 
-[Unreleased]: https://github.com/radeklat/delfino-docker/compare/1.1.0...HEAD
+[Unreleased]: https://github.com/radeklat/delfino-docker/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/radeklat/delfino-docker/compare/1.1.0...2.0.0
 [1.1.0]: https://github.com/radeklat/delfino-docker/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/radeklat/delfino-docker/compare/initial...1.0.0
