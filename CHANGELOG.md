@@ -12,6 +12,12 @@ Types of changes are:
 
 ## [Unreleased]
 
+## [2.0.1] - 2022-12-30
+
+### Fixes
+
+- Pass full Python version to `Dockerfile` if available.
+
 ## [2.0.0] - 2022-12-29
 
 ### Breaking changes
@@ -36,7 +42,8 @@ Types of changes are:
 
 - Initial source code
 
-[Unreleased]: https://github.com/radeklat/delfino-docker/compare/2.0.0...HEAD
+[Unreleased]: https://github.com/radeklat/delfino-docker/compare/2.0.1...HEAD
+[2.0.1]: https://github.com/radeklat/delfino-docker/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/radeklat/delfino-docker/compare/1.1.0...2.0.0
 [1.1.0]: https://github.com/radeklat/delfino-docker/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/radeklat/delfino-docker/compare/initial...1.0.0
