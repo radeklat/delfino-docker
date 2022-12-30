@@ -5,10 +5,10 @@
     <a href="https://app.circleci.com/pipelines/github/radeklat/delfino-docker?branch=main">
         <img alt="CircleCI" src="https://img.shields.io/circleci/build/github/radeklat/delfino-docker">
     </a>
-    <a href="https://app.codecov.io/gh/radeklat/delfino-core/">
+    <a href="https://app.codecov.io/gh/radeklat/delfino-docker/">
         <img alt="Codecov" src="https://img.shields.io/codecov/c/github/radeklat/delfino-docker">
     </a>
-    <a href="https://github.com/radeklat/delfino-core/tags">
+    <a href="https://github.com/radeklat/delfino-docker/tags">
         <img alt="GitHub tag (latest SemVer)" src="https://img.shields.io/github/tag/radeklat/delfino-docker">
     </a>
     <img alt="Maintenance" src="https://img.shields.io/maintenance/yes/2022">
