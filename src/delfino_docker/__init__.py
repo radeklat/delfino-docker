@@ -97,7 +97,7 @@ def docker_build(app_context: AppContext[DockerPluginConfig], push: bool, serial
     project_version = poetry.version
 
     python_version = Version(poetry.dependencies["python"].strip("<>=~^"))
-    flags.extend(["--build-arg", f"PYTHON_VERSION={python_version.major}.{python_version.minor}"])
+    flags.extend(["--build-arg", f"PYTHON_VERSION={python_version.public}"])
 
     command_config = plugin_config.docker_build
 
