@@ -12,7 +12,11 @@ Types of changes are:
 
 ## [Unreleased]
 
-## [2.0.1] - 2022-12-30
+## [3.0.0] - 2023-06-25
+
+### Breaking changes
+
+- Drops Python 3.7 support.
 
 ### Fixes
 
@@ -42,7 +46,8 @@ Types of changes are:
 
 - Initial source code
 
-[Unreleased]: https://github.com/radeklat/delfino-docker/compare/2.0.1...HEAD
+[Unreleased]: https://github.com/radeklat/delfino-docker/compare/3.0.0...HEAD
+[3.0.0]: https://github.com/radeklat/delfino-docker/compare/2.0.1...3.0.0
 [2.0.1]: https://github.com/radeklat/delfino-docker/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/radeklat/delfino-docker/compare/1.1.0...2.0.0
 [1.1.0]: https://github.com/radeklat/delfino-docker/compare/1.0.0...1.1.0
