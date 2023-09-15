@@ -1,6 +1,6 @@
 [tool.poetry]
 name="delfino-docker"
-version="3.0.0"
+version="4.0.0"
 authors = ["Radek Lat <radek.lat@gmail.com>"]
 description="A delfino plugin with helper scripts for working with docker."
 license = "MIT License"
@@ -26,7 +26,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-delfino = "^2.0"
+delfino = "^3.0"
 packaging = "^23.0"
 
 [tool.poetry.plugins]

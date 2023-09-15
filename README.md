@@ -11,7 +11,7 @@
     <a href="https://github.com/radeklat/delfino-docker/tags">
         <img alt="GitHub tag (latest SemVer)" src="https://img.shields.io/github/tag/radeklat/delfino-docker">
     </a>
-    <img alt="Maintenance" src="https://img.shields.io/maintenance/yes/2022">
+    <img alt="Maintenance" src="https://img.shields.io/maintenance/yes/2023">
     <a href="https://github.com/radeklat/delfino-docker/commits/main">
         <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/radeklat/delfino-docker">
     </a>

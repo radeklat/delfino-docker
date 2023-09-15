@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 
 class Dockerhub(BaseModel):
-    build_for_platforms: List[str] = Field(["linux/amd64", "linux/arm64", "linux/arm/v7"], min_items=1)
+    build_for_platforms: List[str] = Field(["linux/amd64", "linux/arm64", "linux/arm/v7"], min_length=1)
     dockerhub_username: str
 
 
