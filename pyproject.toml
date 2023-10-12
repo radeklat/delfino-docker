@@ -25,7 +25,7 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.8.1"
 delfino = "^3.0"
 packaging = "^23.0"
 
@@ -36,7 +36,7 @@ packaging = "^23.0"
 
 [tool.poetry.group.dev.dependencies]
 types-toml = "*"
-delfino-core = {extras = ["verify-all"], version = "^5.1"}
+delfino-core = {extras = ["verify-all"], version = "^6.0"}
 gitpython = "^3.1"
 
 [tool.isort]
