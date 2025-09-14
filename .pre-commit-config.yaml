@@ -1,12 +1,12 @@
 # See https://pre-commit.com/ for usage and config
 default_language_version:
-  python: python3.7
+  python: python3.10
 repos:
 - repo: local
   hooks:
-  - id: formatting
-    name: formatting
-    stages: [commit]
+  - id: Ruff
+    name: Ruff
+    stages: [pre-commit]
     language: system
-    entry: bash -c "export PYTHONPATH=src; poetry run delfino format"
+    entry: bash -lc "uv run delfino ruff"
     pass_filenames: false

@@ -1,12 +1,11 @@
 from getpass import getpass
 from os import getenv
 from pathlib import Path
-from typing import List
 
 import click
 from delfino.constants import PackageManager
 from delfino.execution import OnError, run
-from delfino.models import AppContext
+from delfino.models import AppContext, PyprojectToml
 from delfino.terminal_output import print_header
 from delfino.utils import ArgsList
 from delfino.validation import assert_package_manager_is_known, assert_pip_package_installed, pyproject_toml_key_missing
@@ -19,7 +18,7 @@ except ImportError:
     pass
 
 
-def _install_emulators(build_for_platforms: List[str]) -> None:
+def _install_emulators(build_for_platforms: list[str]) -> None:
     """See https://github.com/tonistiigi/binfmt#installing-emulators."""
     emulators = []
     if "linux/arm64" in build_for_platforms:
@@ -64,6 +63,20 @@ def _docker_build(
     )
 
 
+def _get_python_version_from_pyproject(pyproject_toml: PyprojectToml, package_manager: PackageManager) -> str:
+    if (
+        (python_version := pyproject_toml.project.model_extra.get("requires-python", None)) is None
+        and package_manager == PackageManager.POETRY
+        and pyproject_toml.tool.poetry
+    ):
+        python_version = pyproject_toml.tool.poetry.dependencies.get("python", None)
+
+    assert python_version, "Python version is not set in pyproject.toml"
+
+    cleaned_version = python_version.split(",")[0].strip("<>=~^! ")
+    return Version(cleaned_version).public
+
+
 @click.command()
 @click.option(
     "--push",
@@ -80,24 +93,22 @@ def docker_build(app_context: AppContext[DockerPluginConfig], push: bool, serial
     dockerfile = Path("Dockerfile")
 
     assert_package_manager_is_known(app_context.package_manager)
-    assert (
-        app_context.package_manager == PackageManager.POETRY
-    ), f"Only the '{PackageManager.POETRY.value}' package manager is supported by this command."
     assert_pip_package_installed("packaging")
     assert dockerfile.exists() and dockerfile.is_file(), "File 'Dockerfile' not found but required by this command."
-    assert app_context.pyproject_toml.tool.poetry, pyproject_toml_key_missing("tool.poetry")
     assert plugin_config.docker_build, pyproject_toml_key_missing("tool.delfino-docker.docker_build")
+
+    project_name = app_context.pyproject_toml.project_name
+    project_version = app_context.pyproject_toml.project_version
+    assert project_name, "Project name is not set in pyproject.toml"
+    assert project_version, "Project version is not set in pyproject.toml"
+
+    python_version = _get_python_version_from_pyproject(app_context.pyproject_toml, app_context.package_manager)
 
     print_header("Running Docker build")
 
     flags: ArgsList = []
 
-    poetry = app_context.pyproject_toml.tool.poetry
-    project_name = poetry.name
-    project_version = poetry.version
-
-    python_version = Version(poetry.dependencies["python"].strip("<>=~^"))
-    flags.extend(["--build-arg", f"PYTHON_VERSION={python_version.public}"])
+    flags.extend(["--build-arg", f"PYTHON_VERSION={python_version}"])
 
     command_config = plugin_config.docker_build
 
@@ -116,7 +127,7 @@ def docker_build(app_context: AppContext[DockerPluginConfig], push: bool, serial
 
     joined_build_platforms = ",".join(command_config.build_for_platforms)
     if serialized:
-        build_platforms: List[str] = command_config.build_for_platforms
+        build_platforms: list[str] = command_config.build_for_platforms
     else:
         build_platforms = [joined_build_platforms]
         _install_emulators(command_config.build_for_platforms)
