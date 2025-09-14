@@ -11,7 +11,7 @@
     <a href="https://github.com/radeklat/delfino-docker/tags">
         <img alt="GitHub tag (latest SemVer)" src="https://img.shields.io/github/tag/radeklat/delfino-docker">
     </a>
-    <img alt="Maintenance" src="https://img.shields.io/maintenance/yes/2023">
+    <img alt="Maintenance" src="https://img.shields.io/maintenance/yes/2025">
     <a href="https://github.com/radeklat/delfino-docker/commits/main">
         <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/radeklat/delfino-docker">
     </a>
@@ -31,9 +31,10 @@
 
 # Installation
 
-- pip: `pip install delfino-docker`
+- uv: `uv add delfino-docker`
 - Poetry: `poetry add -D delfino-docker`
 - Pipenv: `pipenv install -d delfino-docker`
+- pip: `pip install delfino-docker`
 
 <!-- PUT DEPENDENCIES OF INDIVIDUAL COMMANDS AS EXTRAS -->
 <!--

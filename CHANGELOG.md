@@ -12,6 +12,18 @@ Types of changes are:
 
 ## [Unreleased]
 
+## [5.0.0] - 2025-09-14
+
+### Breaking changes
+
+- Drop support for Python 3.8 and 3.9.
+- Bump minimum supported `delfino` version from 3.0 to 5.0.
+
+### Features
+
+- Add support for Python 3.13.
+- Add support for `uv` / PEP 621.
+
 ## [4.0.1] - 2023-10-12
 
 ### Fixes
@@ -63,7 +75,8 @@ Types of changes are:
 
 - Initial source code
 
-[Unreleased]: https://github.com/radeklat/delfino-docker/compare/4.0.1...HEAD
+[Unreleased]: https://github.com/radeklat/delfino-docker/compare/5.0.0...HEAD
+[5.0.0]: https://github.com/radeklat/delfino-docker/compare/4.0.1...5.0.0
 [4.0.1]: https://github.com/radeklat/delfino-docker/compare/4.0.0...4.0.1
 [4.0.0]: https://github.com/radeklat/delfino-docker/compare/3.0.0...4.0.0
 [3.0.0]: https://github.com/radeklat/delfino-docker/compare/2.0.1...3.0.0
